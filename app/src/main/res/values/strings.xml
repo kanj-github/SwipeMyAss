@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">Swipe My Ass</string>
+    <string name="text">Hello World! Swipe My Ass.</string>
+
+    <string name="text_fragment">Thanks for swiping my ass!</string>
+</resources>

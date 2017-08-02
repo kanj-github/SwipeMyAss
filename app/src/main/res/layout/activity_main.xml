@@ -38,11 +38,10 @@
             android:id="@+id/frag_container"
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>
-        <ImageView
-            android:id="@+id/grey_image"
+        <android.support.v4.view.ViewPager
+            android:id="@+id/image_carousel"
             android:layout_width="match_parent"
-            android:layout_height="220dp"
-            android:src="@android:color/darker_gray"/>
+            android:layout_height="220dp"/>
     </FrameLayout>
 
 </android.support.design.widget.CoordinatorLayout>

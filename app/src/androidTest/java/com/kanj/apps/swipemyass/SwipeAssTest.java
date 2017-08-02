@@ -8,7 +8,6 @@ import android.support.test.espresso.action.Swipe;
 import android.support.test.filters.LargeTest;
 import android.support.test.rule.ActivityTestRule;
 import android.support.test.runner.AndroidJUnit4;
-
 import org.junit.Assert;
 import org.junit.Rule;
 import org.junit.Test;
@@ -30,7 +29,7 @@ public class SwipeAssTest {
 
     @Test
     public void performClicksAndSwipes() {
-        onView(withId(R.id.grey_image)).check(matches(not(isDisplayed())));
+        onView(withId(R.id.image_carousel)).check(matches(not(isDisplayed())));
 
         onView(withId(R.id.text_label)).perform(click());
 
@@ -40,7 +39,7 @@ public class SwipeAssTest {
             e.printStackTrace();
         }
 
-        onView(withId(R.id.grey_image)).check(matches(isDisplayed()));
+        onView(withId(R.id.image_carousel)).check(matches(isDisplayed()));
 
         boolean viewNotFound = false;
         try {
@@ -51,7 +50,7 @@ public class SwipeAssTest {
 
         Assert.assertTrue(viewNotFound);
 
-        onView(withId(R.id.grey_image)).perform(swipeUp());
+        onView(withId(R.id.image_carousel)).perform(swipeUp());
 
         try {
             Thread.sleep(1000);
@@ -77,7 +76,7 @@ public class SwipeAssTest {
 
         onView(withId(R.id.thanks_label)).check(matches(not(isDisplayed())));
 
-        onView(withId(R.id.grey_image)).check(matches(isDisplayed()));
+        onView(withId(R.id.image_carousel)).check(matches(isDisplayed()));
 
         onView(withId(R.id.text_label)).perform(click());
 
@@ -87,6 +86,6 @@ public class SwipeAssTest {
             e.printStackTrace();
         }
 
-        onView(withId(R.id.grey_image)).check(matches(not(isDisplayed())));
+        onView(withId(R.id.image_carousel)).check(matches(not(isDisplayed())));
     }
 }

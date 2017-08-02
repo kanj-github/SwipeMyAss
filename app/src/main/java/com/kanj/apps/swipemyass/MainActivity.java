@@ -1,5 +1,6 @@
 package com.kanj.apps.swipemyass;
 
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomSheetBehavior;
 import android.support.transition.Fade;
@@ -7,17 +8,16 @@ import android.support.transition.Transition;
 import android.support.transition.TransitionManager;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.View;
 import android.widget.FrameLayout;
-import android.widget.ImageView;
 
 public class MainActivity extends AppCompatActivity {
     private static final String SWIPE_FRAGMENT_TAG = "ASS";
 
     private FrameLayout bottomSheet, whiteOverlay;
-    private ImageView greyImage;
+    private ViewPager imageCarousel;
     private BottomSheetBehavior mBottomSheetBehavior;
     private int bottomSheetState;
 
@@ -30,7 +30,8 @@ public class MainActivity extends AppCompatActivity {
 
         whiteOverlay = (FrameLayout) findViewById(R.id.white_overlay);
         bottomSheet = (FrameLayout) findViewById(R.id.bottom_sheet);
-        greyImage = (ImageView) findViewById(R.id.grey_image);
+        imageCarousel = (ViewPager) findViewById(R.id.image_carousel);
+        imageCarousel.setAdapter(new GreyShadeAdapter());
 
         mBottomSheetBehavior = BottomSheetBehavior.from(bottomSheet);
         mBottomSheetBehavior.setState(BottomSheetBehavior.STATE_HIDDEN);
@@ -92,6 +93,6 @@ public class MainActivity extends AppCompatActivity {
         }
 
         TransitionManager.beginDelayedTransition(bottomSheet, mFadeTransition);
-        greyImage.setVisibility(visible ? View.VISIBLE : View.GONE);
+        imageCarousel.setVisibility(visible ? View.VISIBLE : View.GONE);
     }
 }

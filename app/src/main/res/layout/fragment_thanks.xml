@@ -9,7 +9,30 @@
         android:id="@+id/thanks_label"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
+        android:layout_marginTop="100dp"
+        android:layout_gravity="center_horizontal"
         android:text="@string/text_fragment"
         android:textSize="18sp"/>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/image_carousel"
+        android:layout_width="match_parent"
+        android:layout_gravity="bottom"
+        android:layout_height="220dp"/>
+    <TextView
+        android:id="@+id/tv_carousel_page_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:layout_gravity="center_horizontal|bottom"
+        android:textColor="@android:color/white"
+        android:visibility="gone"/>
+    <TextView
+        android:id="@+id/tv_garbage_thats_on_carousel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="40dp"
+        android:layout_gravity="center_horizontal|bottom"
+        android:text="@string/garbage_text"
+        android:textColor="@android:color/white"/>
 </FrameLayout>

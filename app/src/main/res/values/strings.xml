@@ -3,4 +3,6 @@
     <string name="text">Hello World! Swipe My Ass.</string>
 
     <string name="text_fragment">Thanks for swiping my ass!</string>
+    <string name="garbage_text">GARBAGE TEXT</string>
+    <string name="page_number">%1$d/%2$d</string>
 </resources>

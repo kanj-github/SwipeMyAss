@@ -51,7 +51,9 @@ public class ThanksFragment extends Fragment implements LoopCarouselScrollHandle
 
     @Override
     public void setPageSelected(int pageNumber) {
-        if (pageNumber == 0) {
+        if (ACTUAL_SIZE_OF_PAGER == 1) {
+            page.setText(getString(R.string.page_number, 1, 1));
+        } else if (pageNumber == 0) {
             viewPager.setCurrentItem(ACTUAL_SIZE_OF_PAGER, false);
         } else if (pageNumber == ACTUAL_SIZE_OF_PAGER + 1) {
             viewPager.setCurrentItem(1, false);

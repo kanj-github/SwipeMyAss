@@ -20,7 +20,7 @@ public class GreyShadeLoopAdapter extends PagerAdapter {
 
     @Override
     public int getCount() {
-        return actualSize + 2;
+        return (actualSize == 1) ? 1 : actualSize + 2;
     }
 
     @Override
@@ -34,7 +34,9 @@ public class GreyShadeLoopAdapter extends PagerAdapter {
         View image = LayoutInflater.from(container.getContext())
                 .inflate(R.layout.grey_image, null);
         int colorPosition;
-        if (position == 0) {
+        if (actualSize == 1) {
+            colorPosition = position; // ie. always 0
+        } else if (position == 0) {
             colorPosition = actualSize - 1;
         } else if (position == actualSize + 1) {
             colorPosition = 0;

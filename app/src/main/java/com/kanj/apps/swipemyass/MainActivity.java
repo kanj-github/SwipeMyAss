@@ -28,9 +28,9 @@ public class MainActivity extends AppCompatActivity {
 
         bottomSheetState = -1;
 
-        whiteOverlay = (FrameLayout) findViewById(R.id.white_overlay);
-        bottomSheet = (FrameLayout) findViewById(R.id.bottom_sheet);
-        imageCarousel = (ViewPager) findViewById(R.id.image_carousel);
+        whiteOverlay = findViewById(R.id.white_overlay);
+        bottomSheet = findViewById(R.id.bottom_sheet);
+        imageCarousel = findViewById(R.id.image_carousel);
         imageCarousel.setAdapter(new GreyShadeAdapter());
 
         mBottomSheetBehavior = BottomSheetBehavior.from(bottomSheet);

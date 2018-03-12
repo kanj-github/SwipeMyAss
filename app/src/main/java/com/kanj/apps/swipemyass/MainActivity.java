@@ -10,8 +10,12 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.FrameLayout;
+import android.widget.TextView;
+
+import com.kanj.apps.swipemyass.widget.CollapsibleSectionHeader;
 
 public class MainActivity extends AppCompatActivity {
     private static final String SWIPE_FRAGMENT_TAG = "ASS";
@@ -20,6 +24,9 @@ public class MainActivity extends AppCompatActivity {
     private ViewPager imageCarousel;
     private BottomSheetBehavior mBottomSheetBehavior;
     private int bottomSheetState;
+
+    private CollapsibleSectionHeader textSectionHeader;
+    private TextView textSection;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,6 +66,23 @@ public class MainActivity extends AppCompatActivity {
                 whiteOverlay.setAlpha(slideOffset);
             }
         });
+
+        textSectionHeader = findViewById(R.id.text_section_header);
+        textSection = findViewById(R.id.text_section);
+        textSection.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Log.v("Kanj", "Text section clicked");
+            }
+        });
+
+        // text section is initially open
+        //textSectionHeader.setCollapsibleSection(textSection);
+
+        // text section is initially closed
+        textSection.setVisibility(View.GONE);
+        textSectionHeader.setCollapsed(true);
+        textSectionHeader.setCollapsibleSection(textSection);
     }
 
     public void handleButtonClick(View view) {

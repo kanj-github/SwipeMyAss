@@ -12,12 +12,33 @@
         android:id="@+id/text_label"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="16dp"
         android:textAllCaps="false"
         android:textSize="18sp"
         android:text="@string/text"
         android:textColor="@android:color/black"
         android:onClick="handleButtonClick"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="60dp">
+        <com.kanj.apps.swipemyass.widget.CollapsibleSectionHeader
+            android:id="@+id/text_section_header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:sectionTitle="@string/section_title"/>
+        <TextView
+            android:id="@+id/text_section"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:padding="16dp"
+            android:textColor="@android:color/white"
+            android:text="@string/section_text" />
+    </LinearLayout>
 
     <FrameLayout
         android:id="@+id/white_overlay"

@@ -1,6 +1,9 @@
 <resources>
     <string name="app_name">Swipe My Ass</string>
     <string name="text">Hello World! Swipe My Ass.</string>
+    <string name="section_title_default">Section Title</string>
+    <string name="section_title">Collapsible Section</string>
+    <string name="section_text">Garbage!\nFake news!\nSad!\nCovfefe</string>
 
     <string name="text_fragment">Thanks for swiping my ass!</string>
     <string name="garbage_text">GARBAGE TEXT</string>
